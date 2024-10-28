@@ -1,0 +1,26 @@
+services:
+  data-base-1:
+    container_name: dataSource1
+    image: postgres:14-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: dataSource1
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/init_1.sql:/docker-entrypoint-initdb.d/init_1.sql
+
+  data-base-2:
+    container_name: dataSource2
+    image: postgres:14-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: dataSource2
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./postgres/init_2.sql:/docker-entrypoint-initdb.d/init_1.sql
