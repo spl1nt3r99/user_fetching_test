@@ -3,7 +3,7 @@
 ## Getting Started
 
 - Import the Gradle project in your IDE.
-- Navigate to `resources/docker-compose.yaml` file and run to initiate datasources:
+- Navigate to `resources/docker/docker-compose.yaml` file and run to initiate datasources:
 ```bash
 docker compose up
 ```
